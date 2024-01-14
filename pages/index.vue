@@ -1,3 +1,3 @@
 <template>
-  <div>hello from nuxt pages</div>
+  <div>hello from analog.band</div>
 </template>
