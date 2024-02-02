@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content/dist/runtime/types';
-
-const navigation = inject<Ref<NavItem[]>>('navigation', ref([]));
-
 const links = [
   {
     label: 'Docs',
@@ -10,40 +6,33 @@ const links = [
     to: '/getting-started',
   },
   {
-    label: 'Pro',
+    label: 'Pricing',
     icon: 'i-heroicons-square-3-stack-3d',
-    to: '/pro',
+    to: '/pricing',
   },
   {
-    label: 'Releases',
+    label: 'Resources',
     icon: 'i-heroicons-rocket-launch',
-    to: '/releases',
+    to: '/resources',
   },
 ];
 </script>
 
 <template>
-  <UHeader :links="links">
-    <template #logo>
-      <Logo class="w-auto h-6" />
-    </template>
+  <UHeader
+    :links="links"
+    :ui="{ container: 'max-w-none' }"
+  >
+    <template #logo></template>
 
     <template #right>
-      <UDocsSearchButton label="" />
-
+      <UButton label="Sign Up" />
+      <UButton label="Login" />
       <UColorModeButton />
-
-      <UButton
-        to="https://github.com/nuxt/ui"
-        target="_blank"
-        icon="i-simple-icons-github"
-        color="gray"
-        variant="ghost"
-      />
     </template>
 
     <template #panel>
-      <UNavigationTree :links="mapContentNavigation(navigation)" />
+      <UVerticalNavigation :links="links" />
     </template>
   </UHeader>
 </template>
