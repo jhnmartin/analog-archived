@@ -1,11 +1,6 @@
 <script setup lang="ts">
 const links = [
   {
-    label: 'Docs',
-    icon: 'i-heroicons-book-open',
-    to: '/getting-started',
-  },
-  {
     label: 'Pricing',
     icon: 'i-heroicons-square-3-stack-3d',
     to: '/pricing',
@@ -14,6 +9,11 @@ const links = [
     label: 'Resources',
     icon: 'i-heroicons-rocket-launch',
     to: '/resources',
+  },
+  {
+    label: 'Docs',
+    icon: 'i-heroicons-book-open',
+    to: '/getting-started',
   },
 ];
 </script>

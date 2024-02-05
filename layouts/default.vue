@@ -1,6 +1,8 @@
 <template>
   <div>
     <TheHeader />
-    <slot />
+    <UMain>
+      <slot />
+    </UMain>
   </div>
 </template>
