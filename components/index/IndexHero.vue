@@ -1,12 +1,12 @@
 <template>
   <ULandingHero
-    title="Supercharged GitHub experience"
-    description="Work in real-time with your team on open-source and private repositories, all in one place. Working on GitHub issues and notifications has never been that fun."
+    title="Supercharged Live Event Management for Artists, Venues, and Promoters"
+    description="Real-time collaboration and communication tools for live events."
     orientation="vertical"
     :links="[
       {
-        label: 'Continue with GitHub',
-        icon: 'i-simple-icons-github',
+        label: 'Get Started For Free',
+        icon: 'i-heroicons-rocket-launch',
         color: 'gray',
         size: 'lg',
       },
@@ -16,7 +16,7 @@
       <UButton
         color="gray"
         to="https://volta.net/changelog"
-        label="See what's new in v1.17.0"
+        label="View the Road Map For Upcoming Features"
         trailing-icon="i-heroicons-arrow-right"
         size="xs"
         class="rounded-full"
@@ -24,7 +24,7 @@
     </template>
     <template #default>
       <img
-        src="https://picsum.photos/640/360"
+        src="/images/rock-band-on-stage.jpg"
         class="w-full rounded-md shadow-xl ring-1 ring-gray-300 dark:ring-gray-700"
       />
     </template>

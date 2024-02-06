@@ -17,8 +17,8 @@ useSeoMeta({
   ogDescription: page.value.description,
 });
 
-defineOgImage({
-  component: 'Saas',
+defineOgImageComponent('OgImageSaas', {
+  component: 'OgImageSaas',
   title: page.value.title,
   description: page.value.description,
 });
@@ -44,7 +44,7 @@ const isYearly = ref(false);
           :key="index"
           v-bind="plan"
           :price="isYearly ? plan.price.year : plan.price.month"
-          :cycle="isYearly ? '/year' : '/month'"
+          :cycle="isYearly ? '/user/year' : '/user/month'"
         />
       </UPricingGrid>
     </UContainer>
@@ -67,7 +67,6 @@ const isYearly = ref(false);
       <ULandingFAQ
         :items="page.faq.items"
         multiple
-        default-open
         class="max-w-4xl mx-auto"
       />
     </ULandingSection>

@@ -2,15 +2,15 @@ title: Pricing
 description: Choose the plan that's right for you.
 navigation.icon: i-heroicons-credit-card
 hero:
-  title: A plan for every need
-  description: Our plans are designed to meet the requirements of both beginners and players. Get the right plan that suits you.
+  title: Built to scale plans for just getting started to industry pros.
+  description: Get started for free and when you're ready, choose the plan the right for your organization.
   align: center
 plans:
-  - title: Basic
-    description: A basic plan for individuals.
+  - title: Starter
+    description: Get started with 2 organizations for free.
     price:
-      month: $9.90
-      year: $99.90
+      month: FREE
+      year: FREE
     align: top
     button:
       label: Get Started
@@ -23,11 +23,11 @@ plans:
       - 1 Database
       - 1 SSL Certificate
       - 1 Support Ticket
-  - title: Standard
-    description: A standard plan for small teams.
+  - title: Small Org
+    description: Join up to 10 organizations. Perfect for Small Artist Management Teams, Multi-venue Hospitality Groups and Small Promotion Companies.
     price:
-      month: $19.9
-      year: $199.9
+      month: $10.00
+      year: $100.00
     highlight: true
     align: top
     button:
@@ -41,11 +41,11 @@ plans:
       - 10 Databases
       - 10 SSL Certificates
       - 10 Support Tickets
-  - title: Premium
-    description: A premium plan for large teams.
+  - title: Big Org
+    description: Get Unlimited Orgs.  Built For Industry Pros, Record Labels, Agencies and Regional/National Venues.
     price:
-      month: $29.9
-      year: $299.9
+      month: $20.00
+      year: $200.00
     align: top
     button:
       label: Get Started
@@ -68,7 +68,7 @@ logos:
     - i-simple-icons-cloudflare
 faq:
   title: Frequently asked questions
-  description: Culpa consectetur dolor pariatur commodo aliqua amet tempor nisi enim deserunt elit cillum.
+  description: Learn more about our pricing and plans. If your question isn't answered here, feel free to reach out to us.
   items:
     - label: Is this a secure service?
       content: Qui sunt nostrud aliquip reprehenderit enim proident veniam magna aliquip velit occaecat eiusmod nisi deserunt sunt.

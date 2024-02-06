@@ -25,8 +25,16 @@ export default defineNuxtConfig({
         '/about',
         '/blog',
         '/blog/*',
+        '/docs',
+        '/docs/*',
+        '/resources',
+        '/resources/*',
+        '/signup',
       ],
-      cookieRedirect: false,
+      //cookieRedirect: false,
     },
+  },
+  ui: {
+    icons: ['simple-icons'],
   },
 });

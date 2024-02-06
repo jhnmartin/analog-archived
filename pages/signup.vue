@@ -1,13 +1,19 @@
 <script setup lang="ts">
 definePageMeta({
-  //layout: 'auth'
+  //layout: 'auth',
 });
 
 useSeoMeta({
-  title: 'Login',
+  title: 'Sign up',
 });
 
 const fields = [
+  {
+    name: 'name',
+    type: 'text',
+    label: 'Name',
+    placeholder: 'Enter your name',
+  },
   {
     name: 'email',
     type: 'text',
@@ -35,53 +41,51 @@ const providers = [
   {
     label: 'Continue with GitHub',
     icon: 'i-simple-icons-github',
-    color: 'white' as const,
+    color: 'gray' as const,
     click: () => {
       console.log('Redirect to GitHub');
     },
   },
 ];
+const supabase = useSupabaseClient();
 
-function onSubmit(data: any) {
-  console.log('Submitted', data);
+async function onSubmit(data: any) {
+  const { error } = await supabase.auth.signUp({
+    email: data.email,
+    password: data.password,
+    options: {
+      emailRedirectTo: 'http://localhost:3000/confirm',
+    },
+  });
 }
 </script>
 
 <!-- eslint-disable vue/multiline-html-element-content-newline -->
 <!-- eslint-disable vue/singleline-html-element-content-newline -->
 <template>
-  <UMain class="flex items-center justify-center">
+  <UMain class="h-screen flex items-center justify-center">
     <UCard class="max-w-sm w-full bg-white/75 dark:bg-white/5 backdrop-blur">
       <UAuthForm
         :fields="fields"
         :validate="validate"
         :providers="providers"
-        title="Welcome back"
         align="top"
-        icon="i-heroicons-lock-closed"
+        title="Create an account"
         :ui="{ base: 'text-center', footer: 'text-center' }"
-        :submit-button="{ trailingIcon: 'i-heroicons-arrow-right-20-solid' }"
+        :submit-button="{ label: 'Create account' }"
         @submit="onSubmit"
       >
         <template #description>
-          Don't have an account?
+          Already have an account?
           <NuxtLink
-            to="/signup"
+            to="/login"
             class="text-primary font-medium"
-            >Sign up</NuxtLink
+            >Login</NuxtLink
           >.
         </template>
 
-        <template #password-hint>
-          <NuxtLink
-            to="/"
-            class="text-primary font-medium"
-            >Forgot password?</NuxtLink
-          >
-        </template>
-
         <template #footer>
-          By signing in, you agree to our
+          By signing up, you agree to our
           <NuxtLink
             to="/"
             class="text-primary font-medium"
