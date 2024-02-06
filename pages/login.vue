@@ -42,9 +42,22 @@ const providers = [
   },
 ];
 
-function onSubmit(data: any) {
+const supabase = useSupabaseClient();
+const user = useSupabaseUser();
+const router = useRouter();
+async function onSubmit(data: any) {
   console.log('Submitted', data);
+  const { error } = await supabase.auth.signInWithPassword({
+    email: data.email,
+    password: data.password,
+  });
 }
+
+watchEffect(() => {
+  if (user.value) {
+    router.push('/dashboard');
+  }
+});
 </script>
 
 <!-- eslint-disable vue/multiline-html-element-content-newline -->

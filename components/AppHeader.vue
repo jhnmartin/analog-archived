@@ -32,6 +32,7 @@
       <UDocsSearchButton />
     </template>
     <template #right>
+      <DashboardUserMenu />
       <UColorModeButton />
     </template>
 
