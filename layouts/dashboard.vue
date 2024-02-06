@@ -2,7 +2,25 @@
   <div>
     <AppHeader />
     <UMain>
-      <slot />
+      <UPage class="p-4">
+        <template #left>
+          <UAside :links="links">
+            <template #top> top section </template>
+            <UDivider
+              type="dashed"
+              class="my-6"
+            />
+
+            <div class="h-60">test</div>
+            <UDivider
+              type="dashed"
+              class="my-6"
+            />
+          </UAside>
+        </template>
+
+        <slot />
+      </UPage>
     </UMain>
     <ClientOnly>
       <LazyUDocsSearch

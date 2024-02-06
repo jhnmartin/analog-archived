@@ -54,7 +54,7 @@ async function onSubmit(data: any) {
     email: data.email,
     password: data.password,
     options: {
-      emailRedirectTo: 'http://localhost:3000/confirm',
+      emailRedirectTo: 'https://analog.band/confirm',
     },
   });
 }
