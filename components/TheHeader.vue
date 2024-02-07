@@ -16,6 +16,8 @@ const links = [
     to: '/docs/getting-started',
   },
 ];
+
+const user = useSupabaseUser();
 </script>
 
 <template>
@@ -51,20 +53,26 @@ const links = [
     </template>
 
     <template #right>
-      <UButton
-        label="Login"
-        variant="solid"
-        color="gray"
-        :ui="{ rounded: 'rounded-full' }"
-        to="/login"
-      />
-      <UButton
-        label="Get Started For Free"
-        variant="outline"
-        color="white"
-        :ui="{ rounded: 'rounded-full' }"
-        to="/signup"
-      />
+      <DashboardUserMenu v-if="user" />
+      <div
+        v-else
+        class="flex gap-2"
+      >
+        <UButton
+          label="Login"
+          variant="solid"
+          color="gray"
+          :ui="{ rounded: 'rounded-full' }"
+          to="/login"
+        />
+        <UButton
+          label="Get Started For Free"
+          variant="outline"
+          color="white"
+          :ui="{ rounded: 'rounded-full' }"
+          to="/signup"
+        />
+      </div>
 
       <UColorModeButton />
     </template>
