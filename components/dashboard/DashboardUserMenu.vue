@@ -4,6 +4,7 @@ const items = [
   [
     {
       label: 'Profile',
+      to: '/dashboard/profile',
       avatar: {
         src: 'https://avatars.githubusercontent.com/u/739984?v=4',
       },
@@ -11,35 +12,36 @@ const items = [
   ],
   [
     {
-      label: 'Edit',
-      icon: 'i-heroicons-pencil-square-20-solid',
-      shortcuts: ['E'],
-      click: () => {
-        console.log('Edit');
-      },
+      label: 'Settings',
+      to: '/dashboard/settings',
+      icon: 'i-heroicons-cog-20-solid',
     },
     {
-      label: 'Duplicate',
-      icon: 'i-heroicons-document-duplicate-20-solid',
-      shortcuts: ['D'],
-      disabled: true,
+      label: 'Notifications',
+      to: '/dashboard/notification-preferences',
+      icon: 'i-heroicons-bell-20-solid',
     },
   ],
   [
     {
-      label: 'Archive',
-      icon: 'i-heroicons-archive-box-20-solid',
+      label: 'Upgrade',
+      to: '/dashboard/upgrade',
+      icon: 'i-heroicons-bolt-20-solid',
     },
     {
-      label: 'Move',
-      icon: 'i-heroicons-arrow-right-circle-20-solid',
+      label: 'Billing',
+      to: '/dashboard/billing',
+      icon: 'i-heroicons-credit-card-20-solid',
     },
   ],
   [
     {
-      label: 'Delete',
-      icon: 'i-heroicons-trash-20-solid',
+      label: 'Logout',
+      icon: 'i-heroicons-arrow-right-on-rectangle-20-solid',
       shortcuts: ['⌘', 'D'],
+      click: () => {
+        signOut();
+      },
     },
   ],
 ];

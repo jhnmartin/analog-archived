@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppHeader />
+    <DashboardHeader />
     <UMain>
       <UPage class="p-4">
         <template #left>
