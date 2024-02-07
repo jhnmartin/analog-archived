@@ -19,7 +19,9 @@
           </UAside>
         </template>
 
-        <slot />
+        <UPageBody>
+          <slot />
+        </UPageBody>
       </UPage>
     </UMain>
     <ClientOnly>

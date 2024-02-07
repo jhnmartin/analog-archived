@@ -50,13 +50,20 @@ const providers = [
 const supabase = useSupabaseClient();
 
 async function onSubmit(data: any) {
+  console.log('Submitted', data);
   const { error } = await supabase.auth.signUp({
     email: data.email,
     password: data.password,
     options: {
-      emailRedirectTo: 'https://analog.band/confirm',
+      emailRedirectTo: 'http://localhost:3000/confirm',
     },
   });
+  if (error) {
+    console.error('Error signing up:', error);
+    return;
+  } else {
+    console.log('Signed up');
+  }
 }
 </script>
 

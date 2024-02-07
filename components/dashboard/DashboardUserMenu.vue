@@ -9,6 +9,11 @@ const items = [
         src: 'https://avatars.githubusercontent.com/u/739984?v=4',
       },
     },
+    {
+      label: 'Dashboard',
+      to: '/dashboard',
+      icon: 'i-heroicons-home-20-solid',
+    },
   ],
   [
     {
