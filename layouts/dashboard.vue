@@ -5,7 +5,12 @@
       <UPage class="p-4">
         <template #left>
           <UAside :links="links">
-            <template #top> top section </template>
+            <template #top>
+              <UVerticalNavigation
+                :links="vertLinks"
+                class="mb-6"
+              />
+            </template>
             <UDivider
               type="dashed"
               class="my-6"
@@ -69,6 +74,47 @@ const links = [
     icon: 'i-heroicons-rocket-launch',
     to: '/releases',
   },
+];
+
+const vertLinks = [
+  [
+    {
+      label: 'Profile',
+      avatar: {
+        src: 'https://avatars.githubusercontent.com/u/739984?v=4',
+      },
+      to: '/dashboard/profile',
+    },
+    {
+      label: 'Dashboard',
+      icon: 'i-heroicons-home',
+      to: '/dashboard',
+    },
+  ],
+  [
+    {
+      label: 'Messages',
+      icon: 'i-heroicons-chat-bubble-left',
+      to: '/dashboard',
+    },
+    {
+      label: 'Teams',
+      icon: 'i-heroicons-user-group',
+      to: '/dashboard',
+    },
+  ],
+  [
+    {
+      label: 'Files',
+      icon: 'i-heroicons-folder',
+      to: '/dashboard',
+    },
+    {
+      label: 'Projects',
+      icon: 'i-heroicons-squares-plus',
+      to: '/dashboard',
+    },
+  ],
 ];
 
 provide('navigation', navigation);
