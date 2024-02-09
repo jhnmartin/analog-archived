@@ -1,3 +1,35 @@
+<script setup lang="ts">
+import type { FormError, FormSubmitEvent } from '#ui/types';
+
+definePageMeta({
+  layout: 'dashboard',
+});
+
+const state = reactive({
+  name: undefined,
+});
+
+const validate = (state: any): FormError[] => {
+  const errors = [];
+  if (!state.name) errors.push({ path: 'name', message: 'Required' });
+  return errors;
+};
+
+const supabase = useSupabaseClient();
+async function onSubmit(event: FormSubmitEvent<any>) {
+  // Do something with data
+
+  const { data, error } = await supabase
+    .from('organizations')
+    .insert([{ name: event.data.name }])
+    .select();
+
+  console.log(event.data);
+}
+const toast = useToast();
+const isOpen = ref(false);
+</script>
+
 <template>
   <UPageHeader title="Dashboard" />
   <UPageGrid class="py-12">
@@ -57,35 +89,3 @@
     </div>
   </UModal>
 </template>
-
-<script setup lang="ts">
-import type { FormError, FormSubmitEvent } from '#ui/types';
-
-definePageMeta({
-  layout: 'dashboard',
-});
-
-const state = reactive({
-  name: undefined,
-});
-
-const validate = (state: any): FormError[] => {
-  const errors = [];
-  if (!state.name) errors.push({ path: 'name', message: 'Required' });
-  return errors;
-};
-
-const supabase = useSupabaseClient();
-async function onSubmit(event: FormSubmitEvent<any>) {
-  // Do something with data
-
-  const { data, error } = await supabase
-    .from('organizations')
-    .insert([{ name: event.data.name }])
-    .select();
-
-  console.log(event.data);
-}
-const toast = useToast();
-const isOpen = ref(false);
-</script>
