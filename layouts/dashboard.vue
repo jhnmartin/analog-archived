@@ -1,29 +1,14 @@
 <template>
   <div>
-    <DashboardHeader />
     <UMain>
-      <UPage class="p-4">
-        <template #left>
-          <UAside :links="links">
-            <template #top>
-              <UVerticalNavigation
-                :links="vertLinks"
-                class="mb-6"
-              />
-            </template>
-            <UDivider
-              type="dashed"
-              class="my-6"
-            />
-
-            <div class="h-60">test</div>
-            <UDivider
-              type="dashed"
-              class="my-6"
-            />
-          </UAside>
-        </template>
-
+      <UPage class="">
+        <template #left
+          ><div class="p-2 hidden lg:flex flex-col">
+            <!--top menu-->
+            <div></div>
+            <div>test</div>
+          </div></template
+        >
         <UPageBody>
           <slot />
         </UPageBody>
